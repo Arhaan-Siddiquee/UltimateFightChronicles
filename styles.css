@@ -1,84 +1,137 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #111;
-    color: #fff;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
 header {
     background-color: #222;
-    padding: 20px;
+    color: #fff;
+    padding: 20px 0;
     text-align: center;
 }
 
-header h1 {
+.header-content h1 {
     margin: 0;
     font-size: 2.5em;
-    color: #ff6600;
+}
+
+.header-content p {
+    margin: 5px 0 0;
+    font-size: 1.2em;
+}
+
+nav {
+    background-color: #444;
+    text-align: center;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline;
     margin: 0 10px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #ff6600;
+    background-color: #666;
 }
 
-main {
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #ddd;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.hero-text {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.hero-text h2 {
+    font-size: 2em;
+}
+
+.hero-text p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.articles {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
     padding: 20px;
 }
 
-.blog-posts {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.post {
-    background-color: #222;
+.article {
+    background-color: #fff;
     padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 30%;
+    transition: transform 0.3s ease;
 }
 
-.post h2 {
-    margin-top: 0;
-    color: #ff6600;
+.article:hover {
+    transform: translateY(-5px);
 }
 
-.date {
-    color: #aaa;
-    font-size: 0.9em;
-    margin-bottom: 10px;
+.article img {
+    max-width: 100%;
+    height: auto;
 }
 
-.read-more {
-    color: #ff6600;
+.article h3 {
+    font-size: 1.5em;
+    margin: 15px 0;
+}
+
+.article p {
+    font-size: 1em;
+    margin: 10px 0;
+}
+
+.article a {
     text-decoration: none;
-}
-
-.read-more:hover {
-    text-decoration: underline;
+    color: #444;
+    font-weight: bold;
 }
 
 footer {
     background-color: #222;
+    color: #fff;
     text-align: center;
-    padding: 10px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    padding: 10px 0;
+    margin-top: 20px;
 }
