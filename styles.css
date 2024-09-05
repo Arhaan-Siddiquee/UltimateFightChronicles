@@ -138,6 +138,20 @@ nav ul li a:hover {
     transform: translateY(-10px);
 }
 
+/* Search Bar */
+.search-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#search-bar {
+    width: 60%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
 footer {
     background-color: #222;
     color: #fff;

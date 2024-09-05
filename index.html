@@ -18,14 +18,19 @@
     <!-- Navigation Bar -->
     <nav>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">Rankings</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Fighters</a></li>
+            <li><a href="#" onclick="fetchUFCNews('all')">Home</a></li>
+            <li><a href="#" onclick="fetchUFCNews('Fights')">Fights</a></li>
+            <li><a href="#" onclick="fetchUFCNews('Rankings')">Rankings</a></li>
+            <li><a href="#" onclick="fetchUFCNews('Events')">Events</a></li>
+            <li><a href="#" onclick="fetchUFCNews('Fighters')">Fighters</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
     </nav>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search UFC news..." onkeyup="searchNews()" />
+    </div>
 
     <!-- Main Content -->
     <main>
