@@ -1,5 +1,7 @@
 const apiKey = '9347cc6883f84d39b487fa84e8d58201';
 let articlesArray = [];
+let displayedArticles = 0;
+const articlesPerPage = 15;
 
 function fetchUFCNews(query = 'UFC') {
     fetch(`https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}`)
@@ -7,6 +9,7 @@ function fetchUFCNews(query = 'UFC') {
         .then(data => {
             const articlesContainer = document.getElementById('news-articles');
             articlesContainer.innerHTML = '';
+            document.getElementById('load-more-container').style.display = 'none';  // Hide Load More initially
 
             if (data.articles.length === 0) {
                 articlesContainer.innerHTML = '<p>No news articles found.</p>';
@@ -14,6 +17,7 @@ function fetchUFCNews(query = 'UFC') {
             }
 
             articlesArray = data.articles;
+            displayedArticles = 0;  // Reset article count
             displayArticles(articlesArray);
         })
         .catch(error => {
@@ -25,9 +29,11 @@ function fetchUFCNews(query = 'UFC') {
 
 function displayArticles(articles) {
     const articlesContainer = document.getElementById('news-articles');
-    articlesContainer.innerHTML = '';
+    const remainingArticles = articles.length - displayedArticles;
+    const articlesToDisplay = Math.min(articlesPerPage, remainingArticles);
 
-    articles.forEach(article => {
+    for (let i = 0; i < articlesToDisplay; i++) {
+        const article = articles[displayedArticles];
         const articleElement = document.createElement('div');
         articleElement.className = 'news-article';
         articleElement.innerHTML = `
@@ -37,21 +43,23 @@ function displayArticles(articles) {
             <a href="${article.url}" target="_blank">Read More</a>
         `;
         articlesContainer.appendChild(articleElement);
-    });
+        displayedArticles++;
+    }
+
+    // Show "Load More" button if there are more articles to display
+    if (displayedArticles < articles.length) {
+        document.getElementById('load-more-container').style.display = 'block';
+    }
+}
+
+function loadMoreNews() {
+    displayArticles(articlesArray);
 }
 
 function searchNews() {
-    const searchTerm = document.getElementById('search-bar').value.toLowerCase();
-    const filteredArticles = articlesArray.filter(article => {
-        return (
-            article.title.toLowerCase().includes(searchTerm) ||
-            article.description.toLowerCase().includes(searchTerm)
-        );
-    });
-    displayArticles(filteredArticles);
+    const searchTerm = document.getElementById('search-bar').value;
+    fetchUFCNews(searchTerm);
 }
 
-// Fetch news on page load
-document.addEventListener('DOMContentLoaded', () => {
-    fetchUFCNews('UFC');
-});
+// Fetch initial UFC news when page loads
+fetchUFCNews();
