@@ -17,7 +17,7 @@ function fetchUFCNews(query = 'UFC') {
             }
 
             articlesArray = data.articles;
-            displayedArticles = 0;  // Reset article count
+            displayedArticles = 0; 
             displayArticles(articlesArray);
         })
         .catch(error => {
@@ -46,7 +46,6 @@ function displayArticles(articles) {
         displayedArticles++;
     }
 
-    // Show "Load More" button if there are more articles to display
     if (displayedArticles < articles.length) {
         document.getElementById('load-more-container').style.display = 'block';
     }
@@ -61,5 +60,4 @@ function searchNews() {
     fetchUFCNews(searchTerm);
 }
 
-// Fetch initial UFC news when page loads
 fetchUFCNews();
