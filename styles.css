@@ -3,13 +3,13 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #000000;
     color: #333;
 }
 
 header {
     background-color: #222;
-    color: #fff;
+    color: #000000;
     padding: 20px 0;
     text-align: center;
 }
@@ -46,7 +46,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #000000;
     text-decoration: none;
     padding: 10px 15px;
     border-radius: 5px;
@@ -63,7 +63,7 @@ nav ul li a:hover {
     justify-content: center;
     flex-direction: column;
     padding: 20px;
-    background-color: #ddd;
+    background-color: #000000;
 }
 
 .hero-image img {
@@ -96,7 +96,7 @@ nav ul li a:hover {
 }
 
 .news-article {
-    background-color:#f8ecb8;
+    background-color:#626262;
     border-radius: 10px;
     padding: 6px;
     margin: 1px;
@@ -180,3 +180,9 @@ footer {
     padding: 10px 0;
     margin-top: 20px;
 }
+
+::selection {
+    color: #ff0000; /* Purple text */
+    background-color: #ffffff;
+  }
+  
