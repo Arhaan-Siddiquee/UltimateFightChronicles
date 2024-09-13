@@ -9,7 +9,7 @@ function fetchUFCNews(query = 'UFC') {
         .then(data => {
             const articlesContainer = document.getElementById('news-articles');
             articlesContainer.innerHTML = '';
-            document.getElementById('load-more-container').style.display = 'none';  // Hide Load More initially
+            document.getElementById('load-more-container').style.display = 'none'; 
 
             if (data.articles.length === 0) {
                 articlesContainer.innerHTML = '<p>No news articles found.</p>';
