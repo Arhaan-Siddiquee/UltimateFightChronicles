@@ -20,7 +20,7 @@ export default function UFCNewsApp() {
   const [activeRankingCategory, setActiveRankingCategory] = useState('Pound-for-Pound');
   
   const headerRef = useRef(null);
-  const apiKey = '9347cc6883f84d39b487fa84e8d58201';
+  const apiKey = 'YOUR_API_KEY_HERE'; // Replace with your NewsAPI key
   const articlesPerPage = 6;
   
   // MMA-related keywords for filtering
