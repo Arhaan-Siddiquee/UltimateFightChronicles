@@ -20,8 +20,7 @@ export default function UFCNewsApp() {
   const [activeRankingCategory, setActiveRankingCategory] = useState('Pound-for-Pound');
   
   const headerRef = useRef(null);
-  const apiKey = import.meta.env.VITE_NEWS_API_KEY;
-  const articlesPerPage = 6;
+  const apiKey = '9347cc6883f84d39b487fa84e8d58201';  const articlesPerPage = 6;
   
   // MMA-related keywords for filtering
   const mmaKeywords = ['ufc', 'mma', 'fighter', 'fight', 'championship', 'knockout', 'submission', 'bellator', 
